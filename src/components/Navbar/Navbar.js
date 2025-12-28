@@ -40,8 +40,8 @@ const Navbar = () => {
           <li><Link to="/about" onClick={closeMenu}>About</Link></li>
           <li><Link to="/services" onClick={closeMenu}>Services</Link></li>
           <li><a href="/products" onClick={closeMenu}>Products</a></li>
-          <li><a href="#events" onClick={closeMenu}>Events</a></li>
-          <li><a href="#team" onClick={closeMenu}>Team</a></li>
+          <li><a href="/events" onClick={closeMenu}>Events</a></li>
+          <li><a href="/team" onClick={closeMenu}>Team</a></li>
           <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
           <li className="mobile-login">
             <button className="btn-login">Login</button>

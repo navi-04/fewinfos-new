@@ -9,6 +9,9 @@ import ServiceBuy from './pages/ServiceBuy';
 import Products from './pages/Products';
 import ProductBuy from './pages/ProductBuy';
 import CourseBuy from './pages/CourseBuy';
+import Events from './pages/Events';
+import Team from './pages/Team';
+import Contact from './pages/Contact';
 
 function App() {
   return (
@@ -23,6 +26,9 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/product-buy/:productId" element={<ProductBuy />} />
           <Route path="/course-buy/:courseId" element={<CourseBuy />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/team" element={<Team />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
       </div>
