@@ -31,19 +31,21 @@ function App() {
       <Navbar />
       <ScrollToTop />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/fewinfos-new" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/service-buy/:serviceId" element={<ServiceBuy />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/product-buy/:productId" element={<ProductBuy />} />
-        <Route path="/course-buy/:courseId" element={<CourseBuy />} />
-        <Route path="/events" element={<Events />} />
-        <Route path="/team" element={<Team />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      <main className="page-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/fewinfos-new" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/service-buy/:serviceId" element={<ServiceBuy />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/product-buy/:productId" element={<ProductBuy />} />
+          <Route path="/course-buy/:courseId" element={<CourseBuy />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/team" element={<Team />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
 
       <Footer />
     </div>
