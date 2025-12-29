@@ -10,11 +10,31 @@ export const productsData = [
     ],
     icon: "fas fa-shield-alt",
     price: 499,
-    isFree: false,
+    isFree: true,
     category: "Education",
+    manualLink: "https://fewinfos.com",
+    contributeLink: "https://fewinfos.com",
+    instructions: [
+    {
+      title: "Download the Portal",
+      description: "Visit our GitHub repository and download the latest release of College Portal Pro."
+    },
+    {
+      title: "Install Dependencies",
+      description: "Run 'npm install' to install all required dependencies for the project."
+    },
+    {
+      title: "Configure Settings",
+      description: "https://fewinfos.com"
+    },
+    {
+      title: "Start the Server",
+      description: "Run 'npm start' to launch the portal. Access it at localhost:3000 in your browser."
+    }
+  ],
   },
   {
-    title: "sample product",
+    title: "College Portal Pro",
     description: "A dynamic portal for college management",
     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     features: [
@@ -23,78 +43,10 @@ export const productsData = [
       "Integration with any system",
     ],
     icon: "fas fa-shield-alt",
-    price: 0.3,
-    isFree: false,
+    price: 499,
+    isFree: true,
     category: "Education",
-  },
-  {
-    title: "E-commerce Starter Kit",
-    description: "Complete e-commerce solution ready to deploy",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    features: [
-      "Product Management",
-      "Payment Gateway Integration",
-      "Admin Dashboard",
-    ],
-    icon: "fas fa-shopping-cart",
-    price: 0,
-    isFree: true,
-    category: "Business",
-  },
-  {
-    title: "Blog Management System",
-    description: "Modern blogging platform with CMS",
-    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    features: [
-      "Rich Text Editor",
-      "SEO Optimization",
-      "Analytics Dashboard",
-    ],
-    icon: "fas fa-blog",
-    price: 299,
-    isFree: false,
-    category: "Content",
-  },
-  {
-    title: "Project Template Pack",
-    description: "Collection of ready-to-use project templates",
-    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    features: [
-      "Multiple Templates",
-      "Modern UI/UX",
-      "Responsive Design",
-    ],
-    icon: "fas fa-layer-group",
-    price: 0,
-    isFree: true,
-    category: "Development",
-  },
-  {
-    title: "Social Media Dashboard",
-    description: "Analytics and management tool for social platforms",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    features: [
-      "Multi-platform Support",
-      "Real-time Analytics",
-      "Content Scheduling",
-    ],
-    icon: "fas fa-chart-line",
-    price: 399,
-    isFree: false,
-    category: "Marketing",
-  },
-  {
-    title: "Portfolio Website Builder",
-    description: "Create stunning portfolio websites easily",
-    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    features: [
-      "Drag & Drop Builder",
-      "Multiple Themes",
-      "Mobile Responsive",
-    ],
-    icon: "fas fa-palette",
-    price: 199,
-    isFree: false,
-    category: "Design",
+    // manualLink: "https://fewinfos.com",
+    // contributeLink: "https://fewinfos.com",
   },
 ];

@@ -52,7 +52,7 @@ const ProductBuy = () => {
 
     const templateParams = {
       product_name: product.title,
-      product_price: product.isFree ? 'FREE' : `$${product.price}`,
+      product_price: product.isFree ? 'FREE' : `₹${product.price}`,
       customer_name: formData.fullName,
       customer_email: formData.email,
       customer_phone: formData.phone,
@@ -108,7 +108,7 @@ const ProductBuy = () => {
                 {product.isFree ? (
                   <span className="price-free">FREE</span>
                 ) : (
-                  <span className="price-value">${product.price}</span>
+                  <span className="price-value">₹{product.price}</span>
                 )}
               </div>
 

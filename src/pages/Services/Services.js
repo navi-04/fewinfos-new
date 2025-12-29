@@ -23,7 +23,7 @@ const Services = () => {
   const handleShare = async (service, index) => {
     const shareData = {
       title: service.title,
-      text: `Check out ${service.title} - ${service.description}. Starting from $${formatPrice(service.price)}`,
+      text: `Check out ${service.title} - ${service.description}. Starting from ₹${formatPrice(service.price)}`,
       url: `${window.location.origin}/service-buy/${index}`
     };
 

@@ -100,7 +100,7 @@ const ServiceBuy = () => {
       company_website: formData.companyWebsite || 'N/A',
       service_name: service.title,
       plan_name: selectedPlan,
-      plan_price: `$${getCurrentPrice().toLocaleString()}`,
+      plan_price: `₹${getCurrentPrice().toLocaleString()}`,
       business_type: formData.businessType,
       industry: formData.industry,
       target_market: formData.targetMarket,
@@ -110,7 +110,7 @@ Service Request Details:
 ------------------------
 Service: ${service.title}
 Selected Plan: ${selectedPlan}
-Price: $${getCurrentPrice().toLocaleString()}
+Price: ₹${getCurrentPrice().toLocaleString()}
 
 Customer Information:
 --------------------
@@ -150,7 +150,7 @@ Description: ${formData.businessDescription || 'N/A'}
 
       console.log('Email sent successfully:', result);
       
-      const successMessage = `Your contact request has been sent successfully!\n\nService: ${service.title}\nPlan: ${selectedPlan}\nPrice: $${getCurrentPrice().toLocaleString()}\n\nWe will get back to you soon via email or phone.`;
+      const successMessage = `Your contact request has been sent successfully!\n\nService: ${service.title}\nPlan: ${selectedPlan}\nPrice: ₹${getCurrentPrice().toLocaleString()}\n\nWe will get back to you soon via email or phone.`;
       showDialogMessage('success', 'Request Sent Successfully!', successMessage);
       
       // Reset form after successful submission
@@ -206,7 +206,7 @@ Description: ${formData.businessDescription || 'N/A'}
             </div>
             <div className="summary-item">
               <span className="summary-label">Starting Price:</span>
-              <span className="summary-value">${service.price.toLocaleString()}</span>
+              <span className="summary-value">₹{service.price.toLocaleString()}</span>
             </div>
             <div className="summary-item">
               <span className="summary-label">Tech Stack:</span>
@@ -504,7 +504,7 @@ Description: ${formData.businessDescription || 'N/A'}
                   <i className="fas fa-paper-plane"></i> Send Contact Request
                   {selectedPlan && (
                     <span className="btn-price-tag">
-                      ${getCurrentPrice().toLocaleString()}
+                      ₹{getCurrentPrice().toLocaleString()}
                     </span>
                   )}
                 </>

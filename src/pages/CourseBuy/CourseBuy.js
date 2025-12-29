@@ -15,6 +15,7 @@ const CourseBuy = () => {
     phone: '',
     experience: '',
     message: '',
+    transactionId: '',
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -52,25 +53,46 @@ const CourseBuy = () => {
 
     const templateParams = {
       course_name: course.title,
-      course_price: `$${course.price}`,
-      course_level: course.level,
-      course_duration: course.duration,
-      student_name: formData.fullName,
-      student_email: formData.email,
-      student_phone: formData.phone,
-      experience_level: formData.experience,
-      message: formData.message,
+      course_price: course.price,
+      full_name: formData.fullName,
+      email: formData.email,
+      phone: formData.phone,
+      experience_level: formData.experience || 'Not specified',
+      goals: formData.message || 'Not specified',
+      transaction_id: formData.transactionId,
     };
 
+    // Debug logs
+    console.log('EmailJS Configuration:', {
+      serviceId: process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      templateId: process.env.REACT_APP_COURSE_EMAILJS_TEMPLATE_ID,
+      publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY ? 'Set' : 'Not Set',
+    });
+    console.log('Template Params:', templateParams);
+
+    // Check if environment variables are set
+    const missingVars = [];
+    if (!process.env.REACT_APP_EMAILJS_SERVICE_ID) missingVars.push('REACT_APP_EMAILJS_SERVICE_ID');
+    if (!process.env.REACT_APP_COURSE_EMAILJS_TEMPLATE_ID) missingVars.push('REACT_APP_COURSE_EMAILJS_TEMPLATE_ID');
+    if (!process.env.REACT_APP_EMAILJS_PUBLIC_KEY) missingVars.push('REACT_APP_EMAILJS_PUBLIC_KEY');
+    
+    if (missingVars.length > 0) {
+      console.error('Missing EmailJS environment variables:', missingVars);
+      showDialog('error', `Email configuration is incomplete. Missing: ${missingVars.join(', ')}. Please restart your development server.`);
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
-      await emailjs.send(
+      const response = await emailjs.send(
         process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        process.env.REACT_APP_COURSE_EMAILJS_TEMPLATE_ID,
         templateParams,
         process.env.REACT_APP_EMAILJS_PUBLIC_KEY
       );
 
-      showDialog('success', 'Registration successful! Our team will contact you shortly with course access details and payment instructions.');
+      console.log('EmailJS Response:', response);
+      showDialog('success', 'Registration successful! Our team will contact you shortly with course access details and payment confirmation.');
       
       setFormData({
         fullName: '',
@@ -78,10 +100,18 @@ const CourseBuy = () => {
         phone: '',
         experience: '',
         message: '',
+        transactionId: '',
       });
     } catch (error) {
-      console.error('EmailJS Error:', error);
-      showDialog('error', 'Failed to submit registration. Please try again or contact us directly.');
+      console.error('EmailJS Error Details:', {
+        error: error,
+        message: error?.message,
+        text: error?.text,
+        status: error?.status,
+      });
+      
+      const errorMessage = error?.text || error?.message || 'Unknown error occurred';
+      showDialog('error', `Failed to submit registration: ${errorMessage}. Please ensure all fields are filled correctly or contact us directly.`);
     } finally {
       setIsSubmitting(false);
     }
@@ -133,11 +163,11 @@ const CourseBuy = () => {
                 <div className="pricing">
                   {course.discount > 0 && (
                     <>
-                      <span className="original-price-large">${course.originalPrice}</span>
+                      <span className="original-price-large">₹{course.originalPrice}</span>
                       <span className="discount-badge-large">{course.discount}% OFF</span>
                     </>
                   )}
-                  <div className="current-price-large">${course.price}</div>
+                  <div className="current-price-large">₹{course.price}</div>
                 </div>
               </div>
 
@@ -152,6 +182,24 @@ const CourseBuy = () => {
                   ))}
                 </ul>
               </div>
+
+              {course.detailedDescription && (
+                <div className="course-detailed-description">
+                  <h3>
+                    <i className="fas fa-info-circle"></i>
+                    Course Details
+                  </h3>
+                  <div className="description-content">
+                    {typeof course.detailedDescription === 'string' ? (
+                      <p>{course.detailedDescription}</p>
+                    ) : (
+                      course.detailedDescription.map((paragraph, index) => (
+                        <p key={index}>{paragraph}</p>
+                      ))
+                    )}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 
@@ -223,6 +271,56 @@ const CourseBuy = () => {
                   rows="4"
                   placeholder="Tell us about your goals and expectations..."
                 />
+              </div>
+
+              {/* Payment Section */}
+              <div className="payment-section">
+                <h3>
+                  <i className="fas fa-credit-card"></i>
+                  Payment Information
+                </h3>
+                <p className="payment-instruction">
+                  Please scan the QR code below to make the payment and upload your transaction details.
+                </p>
+
+                <div className="qr-code-container">
+                  <div className="qr-code-box">
+                    {course.paymentQR ? (
+                      <img src={course.paymentQR} alt="Payment QR Code" className="qr-code-image" />
+                    ) : (
+                      <div className="qr-placeholder">
+                        <i className="fas fa-qrcode"></i>
+                        <p>QR Code will be displayed here</p>
+                      </div>
+                    )}
+                  </div>
+                  <div className="qr-code-info">
+                    <h4>Scan to Pay</h4>
+                    <p>Course Fee: <strong>₹{course.price}</strong></p>
+                    <div className="payment-note">
+                      <i className="fas fa-info-circle"></i>
+                      <span>After payment, please fill in the transaction details below</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="transaction-fields">
+                  <div className="form-group">
+                    <label htmlFor="transactionId">
+                      <i className="fas fa-hashtag"></i>
+                      Transaction ID *
+                    </label>
+                    <input
+                      type="text"
+                      id="transactionId"
+                      name="transactionId"
+                      value={formData.transactionId}
+                      onChange={handleChange}
+                      placeholder="Enter your transaction ID"
+                      required
+                    />
+                  </div>
+                </div>
               </div>
 
               <button type="submit" className="submit-btn" disabled={isSubmitting}>

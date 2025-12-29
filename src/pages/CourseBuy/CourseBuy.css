@@ -198,7 +198,43 @@
   min-width: 14px;
 }
 
-.registration-form-section {
+/* Detailed Description Section */
+.course-detailed-description {
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.course-detailed-description h3 {
+  color: #003366;
+  font-size: 18px;
+  margin: 0 0 20px 0;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.course-detailed-description h3 i {
+  color: #0066cc;
+  font-size: 20px;
+}
+
+.description-content {
+  color: #555;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.description-content p {
+  margin: 0 0 15px 0;
+}
+
+.description-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Registration Form Section */.registration-form-section {
   background: white;
   border-radius: 12px;
   padding: 25px;
@@ -381,6 +417,170 @@
   cursor: pointer;
 }
 
+/* Payment Section */
+.payment-section {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 2px solid #e0e0e0;
+}
+
+.payment-section h3 {
+  color: #003366;
+  font-size: 20px;
+  margin: 0 0 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.payment-section h3 i {
+  color: #0066cc;
+  font-size: 22px;
+}
+
+.payment-instruction {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.qr-code-container {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 25px;
+  padding: 25px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 2px dashed #0066cc;
+}
+
+.qr-code-box {
+  flex-shrink: 0;
+  width: 200px;
+  height: 200px;
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.qr-code-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.qr-placeholder {
+  text-align: center;
+  color: #999;
+}
+
+.qr-placeholder i {
+  font-size: 48px;
+  margin-bottom: 10px;
+  display: block;
+  color: #ccc;
+}
+
+.qr-placeholder p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.qr-code-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.qr-code-info h4 {
+  color: #003366;
+  font-size: 18px;
+  margin: 0 0 10px 0;
+}
+
+.qr-code-info p {
+  color: #666;
+  font-size: 16px;
+  margin: 0 0 15px 0;
+}
+
+.qr-code-info strong {
+  color: #0066cc;
+  font-size: 24px;
+}
+
+.payment-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: #e3f2fd;
+  border-radius: 8px;
+  color: #0066cc;
+  font-size: 13px;
+}
+
+.payment-note i {
+  font-size: 16px;
+}
+
+.transaction-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.file-upload-wrapper {
+  position: relative;
+}
+
+.file-upload-wrapper input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.file-upload-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 20px;
+  background: #f8f9fa;
+  border: 2px dashed #0066cc;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #666;
+  font-size: 14px;
+}
+
+.file-upload-label:hover {
+  background: #e3f2fd;
+  border-color: #003366;
+}
+
+.file-upload-label i {
+  font-size: 20px;
+  color: #0066cc;
+}
+
+.field-note {
+  display: block;
+  margin-top: 8px;
+  color: #999;
+  font-size: 12px;
+  font-style: italic;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .course-buy-page {
@@ -406,5 +606,21 @@
 
   .registration-form-section h2 {
     font-size: 22px;
+  }
+
+  .qr-code-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .qr-code-box {
+    width: 180px;
+    height: 180px;
+  }
+
+  .payment-section h3 {
+    font-size: 18px;
   }
 }

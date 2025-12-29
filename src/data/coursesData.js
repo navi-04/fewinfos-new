@@ -6,6 +6,11 @@ export const coursesData = [
     duration: "3 weeks",
     description: "Learn to how to code like a pro using the C, Java, Python and JavaScript.",
     features: ["Expert Mentors", "Real-world Projects", "Lifetime Access"],
+      detailedDescription: [
+    "This comprehensive course covers everything you need to become a full-stack web developer. You'll start with HTML, CSS, and JavaScript fundamentals, then progress to advanced frameworks like React and Node.js.",
+    "Throughout the course, you'll build real-world projects that demonstrate your skills to potential employers. Each project is designed to teach you practical skills that are in high demand in the industry.",
+    "By the end of this bootcamp, you'll have a complete portfolio of web applications and the confidence to start your career as a professional web developer."
+  ],
     category: "development",
     isFeatured: true,
     originalPrice: 12,
@@ -13,6 +18,7 @@ export const coursesData = [
     discount: 50,
     rating: 4.7,
     students: 28,
+    paymentQR: "https://example.com/payment-qr-code.png"
   },
   {
     title: "Git and Github",
@@ -20,10 +26,10 @@ export const coursesData = [
     level: "Beginner",
     duration: "2 weeks",
     description: "Introduction to git the version control system and the Github",
-    features: ["Live Sessions", "Practical Exercises", "Industry Projects"],
+    features: ["Live Sessions", "Practical Exercises", "Industry Projects", "Certification"],
     category: "data",
     isFeatured: true,
-    originalPrice: 8,
+    originalPrice: 8.5,
     price: 5,
     discount: 40,
     rating: 4.5,

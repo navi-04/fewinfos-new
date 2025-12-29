@@ -119,7 +119,26 @@
 .product-card:hover .product-image img {
   transform: scale(1.1);
 }
+.free-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+  z-index: 5;
+}
 
+.free-tag i {
+  font-size: 14px;
+}
 .product-icon-overlay {
   position: absolute;
   top: 12px;
@@ -137,40 +156,6 @@
 .product-icon-overlay i {
   font-size: 24px;
   color: white;
-}
-
-.share-btn-overlay {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  width: 40px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.95);
-  color: #0066cc;
-  border: 2px solid #0066cc;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  opacity: 0;
-  transform: scale(0.8);
-  font-size: 16px;
-  z-index: 5;
-}
-
-.product-card:hover .share-btn-overlay,
-.course-card:hover .share-btn-overlay {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.share-btn-overlay:hover {
-  background: #0066cc;
-  color: white;
-  transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.4);
 }
 
 .product-content {
@@ -242,6 +227,19 @@
   align-items: center;
   padding-top: 20px;
   border-top: 2px solid #f0f0f0;
+  gap: 10px;
+}
+
+.product-footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.product-footer-actions.full-width {
+  flex: 1;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
 }
 
 .product-price {
@@ -255,16 +253,18 @@
 }
 
 .product-btn {
-  padding: 12px 25px;
+  padding: 10px 12px;
   border: none;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 5px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .buy-btn {
@@ -287,6 +287,52 @@
   background: linear-gradient(135deg, #2ecc71 0%, #58d68d 100%);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+}
+
+.manual-btn {
+  background: linear-gradient(135deg, #3498db 0%, #5dade2 100%);
+  color: white;
+}
+
+.manual-btn:hover {
+  background: linear-gradient(135deg, #5dade2 0%, #85c1e9 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.contribute-btn {
+  background: linear-gradient(135deg, #e67e22 0%, #f39c12 100%);
+  color: white;
+}
+
+.contribute-btn:hover {
+  background: linear-gradient(135deg, #f39c12 0%, #f8c471 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(230, 126, 34, 0.3);
+}
+
+.share-btn {
+  padding: 10px 10px;
+  background: white;
+  color: #0066cc;
+  border: 2px solid #0066cc;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  min-height: 38px;
+  min-width: 38px;
+  flex-shrink: 0;
+}
+
+.share-btn:hover {
+  background: #0066cc;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
 }
 
 /* Courses Grid */
@@ -461,6 +507,13 @@
   align-items: center;
   padding-top: 15px;
   border-top: 2px solid #f0f0f0;
+  gap: 10px;
+}
+
+.course-footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .course-pricing {
@@ -574,5 +627,245 @@
 
   .section-title {
     font-size: 24px;
+  }
+}
+
+/* Instruction Dialog Styles */
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+  padding: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.instruction-dialog-box {
+  background: white;
+  border-radius: 16px;
+  max-width: 700px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease;
+  overflow: hidden;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.instruction-dialog-header {
+  background: linear-gradient(135deg, #003366 0%, #0066cc 100%);
+  color: white;
+  padding: 25px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #0066cc;
+}
+
+.instruction-dialog-header h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.instruction-dialog-header i {
+  font-size: 24px;
+}
+
+.close-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+.instruction-dialog-body {
+  padding: 30px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.instructions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.instruction-step {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border-left: 4px solid #0066cc;
+  transition: all 0.3s ease;
+}
+
+.instruction-step:hover {
+  background: #e3f2fd;
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.15);
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #003366 0%, #0066cc 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.step-content h4 {
+  margin: 0 0 8px 0;
+  color: #003366;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.step-content p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.no-instructions {
+  text-align: center;
+  padding: 40px 20px;
+  color: #999;
+}
+
+.no-instructions i {
+  font-size: 48px;
+  margin-bottom: 15px;
+  display: block;
+  color: #ccc;
+}
+
+.no-instructions p {
+  font-size: 16px;
+  margin: 0;
+}
+
+.instruction-dialog-footer {
+  padding: 20px 30px;
+  background: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: center;
+}
+
+.dialog-btn-close {
+  background: linear-gradient(135deg, #003366 0%, #0066cc 100%);
+  color: white;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dialog-btn-close:hover {
+  background: linear-gradient(135deg, #0066cc 0%, #00aaff 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+}
+
+/* Mobile Responsive for Dialog */
+@media (max-width: 768px) {
+  .instruction-dialog-header {
+    padding: 20px;
+  }
+
+  .instruction-dialog-header h2 {
+    font-size: 18px;
+  }
+
+  .instruction-dialog-header i {
+    font-size: 20px;
+  }
+
+  .instruction-dialog-body {
+    padding: 20px;
+  }
+
+  .instruction-step {
+    flex-direction: column;
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .step-number {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  .step-content h4 {
+    font-size: 15px;
+  }
+
+  .step-content p {
+    font-size: 13px;
+  }
+
+  .instruction-dialog-footer {
+    padding: 15px 20px;
+  }
+
+  .dialog-btn-close {
+    padding: 10px 30px;
+    font-size: 14px;
   }
 }

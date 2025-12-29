@@ -40,10 +40,10 @@ const Navbar = () => {
           <li><Link to="/" onClick={closeMenu}>Home</Link></li>
           <li><Link to="/about" onClick={closeMenu}>About</Link></li>
           <li><Link to="/services" onClick={closeMenu}>Services</Link></li>
-          <li><Link to="/products" onClick={closeMenu}>Products</Link></li>
+          <li><Link to="/products" onClick={closeMenu}>Products & Courses</Link></li>
           <li><Link to="/events" onClick={closeMenu}>Events</Link></li>
           <li><Link to="/team" onClick={closeMenu}>Team</Link></li>
-          <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
+          {/* <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li> */}
           <li className="mobile-login">
             <button className="btn-login">Login</button>
           </li>

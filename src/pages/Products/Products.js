@@ -7,11 +7,23 @@ import './Products.css';
 const Products = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('products');
+  const [showInstructionDialog, setShowInstructionDialog] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const handleUseProduct = (product) => {
+    setSelectedProduct(product);
+    setShowInstructionDialog(true);
+  };
+
+  const closeInstructionDialog = () => {
+    setShowInstructionDialog(false);
+    setSelectedProduct(null);
+  };
 
   const handleShareProduct = async (product, index) => {
     const shareData = {
       title: product.title,
-      text: `Check out ${product.title} - ${product.description}. ${product.isFree ? 'FREE' : `$${product.price}`}`,
+      text: `Check out ${product.title} - ${product.description}. ${product.isFree ? 'FREE' : `₹${product.price}`}`,
       url: `${window.location.origin}/product-buy/${index}`
     };
 
@@ -32,7 +44,7 @@ const Products = () => {
   const handleShareCourse = async (course, index) => {
     const shareData = {
       title: course.title,
-      text: `Check out ${course.title} - ${course.description}. Only $${course.price}! ${course.discount > 0 ? `${course.discount}% OFF` : ''}`,
+      text: `Check out ${course.title} - ${course.description}. Only ₹${course.price}! ${course.discount > 0 ? `${course.discount}% OFF` : ''}`,
       url: `${window.location.origin}/course-buy/${index}`
     };
 
@@ -88,16 +100,11 @@ const Products = () => {
                 <div key={index} id={`product-${index}`} className="product-card">
                   <div className="product-image">
                     <img src={product.image} alt={product.title} />
-                    <div className="product-icon-overlay">
-                      <i className={product.icon}></i>
-                    </div>
-                    <button 
-                      className="share-btn-overlay"
-                      onClick={() => handleShareProduct(product, index)}
-                      title="Share this product"
-                    >
-                      <i className="fas fa-share-alt"></i>
-                    </button>
+                    {product.isFree && (
+                      <div className="free-tag">
+                        <i className="fas fa-gift"></i> FREE
+                      </div>
+                    )}
                   </div>
                   
                   <div className="product-content">
@@ -120,25 +127,60 @@ const Products = () => {
                     <div className="product-footer">
                       {product.isFree ? (
                         <>
-                          <div className="product-price free">FREE</div>
-                          <button 
-                            className="product-btn free-btn"
-                            onClick={() => navigate(`/product-buy/${index}`)}
-                          >
-                            <i className="fas fa-download"></i>
-                            Download
-                          </button>
+                          <div className="product-footer-actions full-width">
+                            {product.manualLink && (
+                              <button 
+                                className="product-btn manual-btn"
+                                onClick={() => window.open(product.manualLink, '_blank')}
+                              >
+                                <i className="fas fa-book"></i>
+                                Manual
+                              </button>
+                            )}
+                            {product.contributeLink && (
+                              <button 
+                                className="product-btn contribute-btn"
+                                onClick={() => window.open(product.contributeLink, '_blank')}
+                              >
+                                <i className="fas fa-code-branch"></i>
+                                GitHub
+                              </button>
+                            )}
+                            <button 
+                              className="product-btn free-btn"
+                              onClick={() => handleUseProduct(product)}
+                            >
+                              <i className="fas fa-hand-pointer"></i>
+                              Use it
+                            </button>
+                            <button 
+                              className="share-btn"
+                              onClick={() => handleShareProduct(product, index)}
+                              title="Share this product"
+                            >
+                              <i className="fas fa-share-alt"></i>
+                            </button>
+                          </div>
                         </>
                       ) : (
                         <>
-                          <div className="product-price">${product.price}</div>
-                          <button 
-                            className="product-btn buy-btn"
-                            onClick={() => navigate(`/product-buy/${index}`)}
-                          >
-                            <i className="fas fa-shopping-cart"></i>
-                            Buy Now
-                          </button>
+                          <div className="product-price">₹{product.price}</div>
+                          <div className="product-footer-actions">
+                            <button 
+                              className="product-btn buy-btn"
+                              onClick={() => navigate(`/product-buy/${index}`)}
+                            >
+                              <i className="fas fa-shopping-cart"></i>
+                              Buy Now
+                            </button>
+                            <button 
+                              className="share-btn"
+                              onClick={() => handleShareProduct(product, index)}
+                              title="Share this product"
+                            >
+                              <i className="fas fa-share-alt"></i>
+                            </button>
+                          </div>
                         </>
                       )}
                     </div>
@@ -170,13 +212,6 @@ const Products = () => {
                         <i className="fas fa-clock"></i> {course.duration}
                       </span>
                     </div>
-                    <button 
-                      className="share-btn-overlay"
-                      onClick={() => handleShareCourse(course, index)}
-                      title="Share this course"
-                    >
-                      <i className="fas fa-share-alt"></i>
-                    </button>
                   </div>
 
                   <div className="course-content">
@@ -207,20 +242,29 @@ const Products = () => {
                     <div className="course-footer">
                       <div className="course-pricing">
                         {course.discount > 0 && (
-                          <span className="original-price">${course.originalPrice}</span>
+                          <span className="original-price">₹{course.originalPrice}</span>
                         )}
-                        <span className="current-price">${course.price}</span>
+                        <span className="current-price">₹{course.price}</span>
                         {course.discount > 0 && (
                           <span className="discount-badge">{course.discount}% OFF</span>
                         )}
                       </div>
-                      <button 
-                        className="course-btn"
-                        onClick={() => navigate(`/course-buy/${index}`)}
-                      >
-                        <i className="fas fa-user-plus"></i>
-                        Register Now
-                      </button>
+                      <div className="course-footer-actions">
+                        <button 
+                          className="course-btn"
+                          onClick={() => navigate(`/course-buy/${index}`)}
+                        >
+                          <i className="fas fa-user-plus"></i>
+                          Register Now
+                        </button>
+                        <button 
+                          className="share-btn"
+                          onClick={() => handleShareCourse(course, index)}
+                          title="Share this course"
+                        >
+                          <i className="fas fa-share-alt"></i>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -229,6 +273,48 @@ const Products = () => {
           </section>
         )}
       </div>
+
+      {/* Instruction Dialog */}
+      {showInstructionDialog && selectedProduct && (
+        <div className="dialog-overlay" onClick={closeInstructionDialog}>
+          <div className="instruction-dialog-box" onClick={(e) => e.stopPropagation()}>
+            <div className="instruction-dialog-header">
+              <h2>
+                <i className="fas fa-book-open"></i>
+                How to Use: {selectedProduct.title}
+              </h2>
+              <button className="close-btn" onClick={closeInstructionDialog}>
+                <i className="fas fa-times"></i>
+              </button>
+            </div>
+            <div className="instruction-dialog-body">
+              {selectedProduct.instructions && selectedProduct.instructions.length > 0 ? (
+                <div className="instructions-list">
+                  {selectedProduct.instructions.map((instruction, index) => (
+                    <div key={index} className="instruction-step">
+                      <div className="step-number">{index + 1}</div>
+                      <div className="step-content">
+                        <h4>{instruction.title}</h4>
+                        <p>{instruction.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="no-instructions">
+                  <i className="fas fa-info-circle"></i>
+                  <p>No instructions available for this product yet.</p>
+                </div>
+              )}
+            </div>
+            <div className="instruction-dialog-footer">
+              <button className="dialog-btn-close" onClick={closeInstructionDialog}>
+                Got it!
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
