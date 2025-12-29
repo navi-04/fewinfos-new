@@ -84,7 +84,7 @@
   border: 2px solid transparent;
   display: flex;
   flex-direction: column;
-  aspect-ratio: 1;
+  min-height: 450px;
   justify-content: space-between;
 }
 
@@ -244,6 +244,19 @@
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+}
+
+/* Tablet and Medium Screens */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .service-card {
+    aspect-ratio: auto;
+    min-height: 420px;
+  }
 }
 
 @media (max-width: 768px) {

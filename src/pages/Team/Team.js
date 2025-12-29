@@ -91,6 +91,42 @@ const Team = () => {
                 <div className="team-info">
                   <h3 className="team-name">{member.name}</h3>
                   <p className="team-position">{member.position}</p>
+                  {/* Mobile Social Links */}
+                  <div className="mobile-social-links">
+                    {member.socials.github && member.socials.github !== '#' && (
+                      <a 
+                        href={member.socials.github} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="social-link"
+                        aria-label="GitHub"
+                      >
+                        <i className="fab fa-github"></i>
+                      </a>
+                    )}
+                    {member.socials.linkedin && member.socials.linkedin !== '#' && (
+                      <a 
+                        href={member.socials.linkedin} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="social-link"
+                        aria-label="LinkedIn"
+                      >
+                        <i className="fab fa-linkedin-in"></i>
+                      </a>
+                    )}
+                    {member.socials.instagram && member.socials.instagram !== '#' && (
+                      <a 
+                        href={member.socials.instagram} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="social-link"
+                        aria-label="Instagram"
+                      >
+                        <i className="fab fa-instagram"></i>
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>

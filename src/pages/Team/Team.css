@@ -214,10 +214,15 @@
 .team-position {
   font-size: 14px;
   color: #0066cc;
-  margin: 0;
+  margin: 0 0 15px 0;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+/* Mobile Social Links - hidden by default */
+.mobile-social-links {
+  display: none;
 }
 
 /* Responsive Design */
@@ -254,12 +259,27 @@
     animation: none;
   }
 
+  /* Disable hover effects on mobile */
+  .team-card:hover .team-card-inner {
+    transform: none;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .team-card:hover .team-image {
+    transform: none;
+  }
+
   .team-card-inner {
     border-radius: 12px;
   }
 
   .team-image-wrapper {
     height: 200px;
+  }
+
+  /* Hide overlay with social links on mobile */
+  .team-overlay {
+    display: none;
   }
 
   .team-info {
@@ -273,16 +293,29 @@
 
   .team-position {
     font-size: 11px;
+    margin-bottom: 10px;
   }
 
-  .social-links {
+  /* Show mobile social links below role */
+  .mobile-social-links {
+    display: flex;
+    justify-content: center;
     gap: 10px;
+    margin-top: 10px;
   }
 
-  .social-link {
+  .mobile-social-links .social-link {
     width: 35px;
     height: 35px;
     font-size: 14px;
+    background: linear-gradient(135deg, #003366 0%, #0066cc 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 51, 102, 0.2);
+  }
+
+  .mobile-social-links .social-link:hover {
+    transform: none;
+    opacity: 0.9;
   }
 }
 
@@ -331,13 +364,14 @@
 
   .team-position {
     font-size: 10px;
+    margin-bottom: 8px;
   }
 
-  .social-links {
+  .mobile-social-links {
     gap: 8px;
   }
 
-  .social-link {
+  .mobile-social-links .social-link {
     width: 32px;
     height: 32px;
     font-size: 13px;

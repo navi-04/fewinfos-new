@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { servicesData } from '../../data/servicesData';
 import emailjs from '@emailjs/browser';
@@ -8,6 +8,11 @@ const ServiceBuy = () => {
   const { serviceId } = useParams();
   const navigate = useNavigate();
   const service = servicesData[parseInt(serviceId)];
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // Form state
   const [selectedPlan, setSelectedPlan] = useState('Basic');
