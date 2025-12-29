@@ -232,7 +232,22 @@
 }
 
 @media (max-width: 480px) {
+.scroll-indicator {
+  position: absolute;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
 
+.scroll-arrow {
+  width: 30px;
+  height: 30px;
+  border-left: 3px solid #003366;
+  border-bottom: 3px solid #003366;
+  transform: rotate(-45deg);
+  animation: scrollBounce 2s infinite;
+}
 .hero-background {
   position: absolute;
   top: 60px;

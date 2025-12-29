@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from 'react';
+// import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Hero.css';
 
 const Hero = () => {
   const navigate = useNavigate();
-  const [showScroll, setShowScroll] = useState(true);
+  // const [showScroll, setShowScroll] = useState(true);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setShowScroll(false);
-      } else {
-        setShowScroll(true);
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > 100) {
+  //       setShowScroll(false);
+  //     } else {
+  //       setShowScroll(true);
+  //     }
+  //   };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, []);
 
   return (
     <section className="hero">
@@ -60,11 +60,11 @@ const Hero = () => {
           </button>
         </div>
         
-        {showScroll && (
+        {/* {showScroll && (
           <div className="scroll-indicator">
             <div className="scroll-arrow"></div>
           </div>
-        )}
+        )} */}
       </div>
     </section>
   );

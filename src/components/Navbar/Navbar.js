@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
+import logo from '../../assets/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +32,7 @@ const Navbar = () => {
       <div className="navbar-container">
         <div className="navbar-logo">
           <Link to="/" onClick={closeMenu}>
-            <img src="/logo.png" alt="FewInfos" />
+            <img src={logo} alt="FewInfos" />
           </Link>
         </div>
 
@@ -39,9 +40,9 @@ const Navbar = () => {
           <li><Link to="/" onClick={closeMenu}>Home</Link></li>
           <li><Link to="/about" onClick={closeMenu}>About</Link></li>
           <li><Link to="/services" onClick={closeMenu}>Services</Link></li>
-          <li><a href="/products" onClick={closeMenu}>Products</a></li>
-          <li><a href="/events" onClick={closeMenu}>Events</a></li>
-          <li><a href="/team" onClick={closeMenu}>Team</a></li>
+          <li><Link to="/products" onClick={closeMenu}>Products</Link></li>
+          <li><Link to="/events" onClick={closeMenu}>Events</Link></li>
+          <li><Link to="/team" onClick={closeMenu}>Team</Link></li>
           <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
           <li className="mobile-login">
             <button className="btn-login">Login</button>
