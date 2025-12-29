@@ -1,15 +1,18 @@
 .service-buy-page {
   min-height: 100vh;
   padding: 80px 20px 40px;
-  width: 100%;
+  width: 100% !important;
+  max-width: 100% !important;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  box-sizing: border-box;
 }
 
 .service-buy-container {
-  width: 100%;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100% !important;
+  max-width: 900px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0 20px;
   box-sizing: border-box;
 }
 
@@ -44,10 +47,11 @@
   padding: 30px;
   margin-bottom: 30px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100% !important;
+  max-width: 900px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box;
 }
 
 .summary-header {
@@ -107,10 +111,11 @@
   padding: 30px;
   margin-bottom: 25px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100% !important;
+  max-width: 900px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box;
 }
 
 /* Plan Selection */
