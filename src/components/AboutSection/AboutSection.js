@@ -14,21 +14,19 @@ const AboutSection = () => {
               <h3>About FewInfos</h3>
             </div>
             <p className="about-desc">
-              We are pioneers in delivering transformative technology solutions 
-              that empower businesses to thrive in the digital age. Our passion 
-              for innovation drives everything we do.
+              We are pioneers in delivering transformative technology services, products, and open-source innovations that empower businesses to thrive in the digital age. Our passion for innovation drives everything we do.
             </p>
             <div className="about-highlights">
               <div className="highlight-item">
-                <span className="number">10+</span>
+                <span className="number">2+</span>
                 <span className="label">Years Experience</span>
               </div>
               <div className="highlight-item">
-                <span className="number">500+</span>
+                <span className="number">30+</span>
                 <span className="label">Happy Clients</span>
               </div>
               <div className="highlight-item">
-                <span className="number">1000+</span>
+                <span className="number">25+</span>
                 <span className="label">Projects Done</span>
               </div>
             </div>

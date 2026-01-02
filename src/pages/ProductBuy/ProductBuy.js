@@ -31,6 +31,19 @@ const ProductBuy = () => {
     );
   }
 
+  if (product.isFree) {
+    return (
+      <div className="product-buy-page">
+        <div className="error-container">
+          <h2>This is a free product</h2>
+          <p>You can try this product directly without purchasing.</p>
+          <button onClick={() => navigate(`/try-product/${productId}`)}>Try It Now</button>
+          <button onClick={() => navigate('/products')} style={{ marginLeft: '10px' }}>Back to Products</button>
+        </div>
+      </div>
+    );
+  }
+
   const handleChange = (e) => {
     setFormData({
       ...formData,

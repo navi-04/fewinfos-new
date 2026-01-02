@@ -1,196 +1,398 @@
 export const servicesData = [
   {
-    icon: "fas fa-desktop",
-    title: "E-commerce websites",
-    description: "Custom web solutions with cutting-edge technologies",
+    icon: "fas fa-shopping-cart",
+    title: "E-Commerce Website Development",
+    description:
+      "Scalable, secure, and conversion-focused e-commerce solutions tailored to your business goals.",
     technologies: [
       "React",
+      "Next.js",
       "Node.js",
-      "Python",
+      "Python (Django/FastAPI)",
+      "PostgreSQL",
+      "Stripe / Razorpay",
       "HTML5",
       "CSS3",
-      "Bootstrap",
+      "Tailwind / Bootstrap",
     ],
-    price: 999,
+    price: 75000,
+    deliveryType: "Custom E-Commerce Solution",
+    estimatedTimeline: "4-8 weeks (finalized after requirements)",
     plans: [
       {
-        name: 'Basic',
-        price: 999,
-        features: ['Standard Features', 'Email Support', '30 Days Support', 'Basic Customization']
+        name: "Starter",
+        price: 75000,
+        features: [
+          "Up to 20 Products",
+          "Responsive Design (Mobile-First)",
+          "User Authentication & Roles",
+          "Product Management Dashboard",
+          "Basic SEO Setup",
+          "Payment Gateway Integration",
+          "Order & Inventory Management",
+          "Email Notifications",
+          "30 Days Free Support",
+        ],
       },
       {
-        name: 'Professional',
-        price: 1499,
-        features: ['All Basic Features', 'Priority Support', '90 Days Support', 'Advanced Customization', 'API Integration']
+        name: "Growth",
+        price: 150000,
+        features: [
+          "Unlimited Products",
+          "Advanced UI/UX Design",
+          "Multi-Payment Gateway Support",
+          "Cart & Wishlist Functionality",
+          "Discounts & Coupon Management",
+          "Advanced SEO Optimization",
+          "Analytics & Sales Reports",
+          "API Integrations (CRM, ERP)",
+          "Performance Optimization",
+          "90 Days Priority Support",
+        ],
       },
       {
-        name: 'Enterprise',
-        price: 1998,
-        features: ['All Professional Features', '24/7 Support', 'Lifetime Support', 'Full Customization', 'Dedicated Account Manager', 'Custom Features']
-      }
-    ]
+        name: "Enterprise",
+        price: 250000,
+        features: [
+          "Custom Architecture & Tech Stack",
+          "Multi-Vendor Marketplace Support",
+          "Advanced Security & Compliance",
+          "Scalable Cloud Deployment",
+          "Custom Admin Panels",
+          "AI-Based Product Recommendations",
+          "Third-Party Integrations (Logistics, Tax, ERP)",
+          "Load & Stress Testing",
+          "Dedicated Project Manager",
+          "24/7 Support & Maintenance",
+        ],
+      },
+    ],
   },
   {
     icon: "fas fa-laptop-code",
-    title: "Software Development",
-    description: "Custom software solutions tailored to your business needs",
+    title: "Custom Software Development",
+    description:
+      "End-to-end software development services designed to build reliable, scalable, and secure business applications.",
     technologies: [
-      "Full-stack Development",
-      "API Integration",
-      "Database Design",
-      "Cloud Deployment",
-      "Testing & QA",
+      "Frontend & Backend Development",
+      "REST & GraphQL APIs",
+      "Database Architecture",
+      "Cloud Deployment (AWS / GCP)",
+      "Automated Testing & QA",
     ],
-    price: 1499,
+    price: 90000,
+    deliveryType: "Custom Software Solution",
+    estimatedTimeline: "4–8 weeks (finalized after requirements)",
     plans: [
       {
-        name: 'Basic',
-        price: 1499,
-        features: ['Standard Features', 'Email Support', '30 Days Support', 'Basic Integration']
+        name: "Basic",
+        price: 90000,
+        features: [
+          "Requirement Analysis & Planning",
+          "Core Feature Development",
+          "Basic UI Implementation",
+          "API Integration",
+          "Database Setup",
+          "Testing & Bug Fixes",
+          "30 Days Post-Delivery Support",
+        ],
       },
       {
-        name: 'Professional',
-        price: 2249,
-        features: ['All Basic Features', 'Priority Support', '90 Days Support', 'Advanced Features', 'Cloud Integration']
+        name: "Professional",
+        price: 150000,
+        features: [
+          "All Basic Features",
+          "Advanced Feature Development",
+          "Custom UI/UX Design",
+          "Cloud Deployment",
+          "Role-Based Access Control",
+          "Performance Optimization",
+          "90 Days Priority Support",
+        ],
       },
       {
-        name: 'Enterprise',
-        price: 2998,
-        features: ['All Professional Features', '24/7 Support', 'Lifetime Support', 'Full Customization', 'Dedicated Team', 'Scalable Architecture']
-      }
-    ]
+        name: "Enterprise",
+        price: 250000,
+        features: [
+          "All Professional Features",
+          "Scalable & Modular Architecture",
+          "Advanced Security Implementation",
+          "CI/CD & DevOps Setup",
+          "Third-Party Integrations",
+          "Dedicated Development Team",
+          "1 Year Support & Maintenance",
+        ],
+      },
+    ],
   },
   {
     icon: "fas fa-code",
-    title: "Minor Projects",
-    description: "Web based minor project for students",
-    technologies: ["Python", "HTML5", "CSS3", "Bootstrap", "SQL"],
-    price: 199,
+    title: "Website Development",
+    description:
+      "Affordable, modern, and responsive websites designed for individuals, startups, and small businesses.",
+    technologies: [
+      "HTML5",
+      "CSS3",
+      "Bootstrap / Tailwind",
+      "JavaScript",
+      "Python (Backend)",
+      "SQL Database",
+    ],
+    price: 2000,
+    deliveryType: "Static / Dynamic Website",
+    estimatedTimeline: "2-6 weeks (based on plan)",
     plans: [
       {
-        name: 'Basic',
-        price: 199,
-        features: ['Simple Project', 'Email Support', '7 Days Support', 'Documentation']
+        name: "Basic",
+        price: 2000,
+        features: [
+          "Single Page Website",
+          "Responsive Design",
+          "Basic UI Layout",
+          "Contact Form",
+          "Basic SEO Setup",
+          "7 Days Support",
+        ],
       },
       {
-        name: 'Professional',
-        price: 299,
-        features: ['All Basic Features', 'Priority Support', '15 Days Support', 'Advanced Features', 'Code Review']
+        name: "Professional",
+        price: 5000,
+        features: [
+          "Up to 5 Pages",
+          "Custom UI Design",
+          "Responsive & Cross-Browser Support",
+          "Contact & Inquiry Forms",
+          "Basic Performance Optimization",
+          "Google Analytics Setup",
+          "15 Days Priority Support",
+        ],
       },
       {
-        name: 'Enterprise',
-        price: 398,
-        features: ['All Professional Features', 'Extended Support', '30 Days Support', 'Custom Features', 'Deployment Help']
-      }
-    ]
+        name: "Enterprise",
+        price: 10000,
+        features: [
+          "Up to 10 Pages",
+          "Fully Custom Design",
+          "Dynamic Content Integration",
+          "Database Connectivity",
+          "Deployment & Hosting Assistance",
+          "Basic Security Setup",
+          "30 Days Support",
+        ],
+      },
+    ],
   },
   {
     icon: "fab fa-instagram",
     title: "Social Media Management",
-    description: "Standard post and reels per months",
-    technologies: ["Post per day", "Reel per week", "stories per day"],
-    price: 299,
+    description:
+      "Monthly social media management with consistent content, engagement, and performance tracking to grow your brand.",
+    technologies: [
+      "Content Planning",
+      "Post & Reel Creation",
+      "Story Publishing",
+      "Analytics & Insights",
+      "Engagement Management",
+    ],
+    price: 5000,
+    deliveryType: "Monthly Retainer",
+    estimatedTimeline: "Immediate start, monthly commitment",
     plans: [
       {
-        name: 'Basic',
-        price: 299,
-        features: ['1 Post/Day', '1 Reel/Week', '3 Stories/Day', 'Basic Analytics']
+        name: "Basic",
+        price: 5000,
+        features: [
+          "15 Posts / Month",
+          "4 Reels / Month",
+          "Daily Stories (Text/Image)",
+          "Basic Captions & Hashtags",
+          "Monthly Performance Report",
+        ],
       },
       {
-        name: 'Professional',
-        price: 449,
-        features: ['2 Posts/Day', '2 Reels/Week', '5 Stories/Day', 'Advanced Analytics', 'Engagement Management']
+        name: "Professional",
+        price: 10000,
+        features: [
+          "25 Posts / Month",
+          "8 Reels / Month",
+          "Daily Stories (Creative)",
+          "Advanced Captions & Hashtags",
+          "Audience Engagement (Replies & Comments)",
+          "Advanced Analytics Report",
+        ],
       },
       {
-        name: 'Enterprise',
-        price: 598,
-        features: ['3 Posts/Day', '3 Reels/Week', 'Unlimited Stories', 'Full Analytics', 'Dedicated Manager', 'Ad Campaigns']
-      }
-    ]
+        name: "Enterprise",
+        price: 18000,
+        features: [
+          "Daily Posts",
+          "12 Reels / Month",
+          "Unlimited Stories",
+          "Content Strategy & Calendar",
+          "Community Management",
+          "Paid Ads Support (Setup Only)",
+          "Dedicated Account Manager",
+          "Detailed Monthly Report",
+        ],
+      },
+    ],
   },
   {
     icon: "fas fa-book",
-    title: "One To One Mentorship",
-    description: "Ideal solutions by our mentors",
-    technologies: ["How to code", "How to use AI"],
-    price: 99,
+    title: "One-to-One Mentorship",
+    description:
+      "Personalized mentorship sessions focused on coding skills, AI tools, career growth, and real-world project guidance.",
+    technologies: [
+      "Programming Fundamentals",
+      "Web & Software Development",
+      "AI Tools & Workflows",
+      "Career & Interview Preparation",
+    ],
+    price: 2000,
+    deliveryType: "Online Mentorship Sessions",
+    estimatedTimeline: "Flexible scheduling, monthly basis",
     plans: [
       {
-        name: 'Basic',
-        price: 99,
-        features: ['4 Sessions/Month', 'Email Support', 'Basic Resources', 'Code Review']
+        name: "Basic",
+        price: 2000,
+        features: [
+          "4 Live 1-to-1 Sessions / Month",
+          "Personalized Learning Guidance",
+          "Basic Coding Help",
+          "Session Notes & Resources",
+          "Email Support",
+        ],
       },
       {
-        name: 'Professional',
-        price: 149,
-        features: ['8 Sessions/Month', 'Priority Support', 'Advanced Resources', 'Project Guidance', 'Career Advice']
+        name: "Professional",
+        price: 5000,
+        features: [
+          "8 Live 1-to-1 Sessions / Month",
+          "Project-Based Learning",
+          "Advanced Coding & AI Guidance",
+          "Code Reviews & Feedback",
+          "Career Roadmap Planning",
+          "Priority Support",
+        ],
       },
       {
-        name: 'Enterprise',
-        price: 198,
-        features: ['Unlimited Sessions', '24/7 Support', 'All Resources', 'Personal Roadmap', 'Job Interview Prep', 'Resume Review']
-      }
-    ]
+        name: "Enterprise",
+        price: 9000,
+        features: [
+          "Unlimited 1-to-1 Sessions",
+          "Custom Learning Roadmap",
+          "End-to-End Project Mentorship",
+          "Interview Preparation",
+          "Resume & Portfolio Review",
+          "Job Search Guidance",
+          "Direct Mentor Access",
+        ],
+      },
+    ],
   },
   {
     icon: "fab fa-whatsapp",
     title: "Business WhatsApp Management",
     description:
-      "Professional management of your business WhatsApp channel, including automation, customer engagement, and broadcast solutions.",
+      "End-to-end WhatsApp Business automation for customer support, lead engagement, and broadcast communication.",
     technologies: [
-      "WhatsApp API",
-      "Automation Tools",
-      "Customer Support",
-      "Broadcast Messaging",
+      "WhatsApp Business API",
+      "Chatbot Automation",
+      "Broadcast Campaigns",
+      "CRM & Workflow Integration",
     ],
-    price: 399,
+    price: 5000,
+    deliveryType: "WhatsApp Business Automation & Management",
+    estimatedTimeline: "1–2 weeks setup, ongoing monthly service",
     plans: [
       {
-        name: 'Basic',
-        price: 399,
-        features: ['Basic Automation', 'Email Support', '1000 Messages/Month', 'Basic Analytics']
+        name: "Basic",
+        price: 5000,
+        features: [
+          "WhatsApp Business API Setup",
+          "Basic Auto-Reply Messages",
+          "Broadcast Campaigns (Limited)",
+          "Up to 2,000 Messages / Month",
+          "Basic Analytics Report",
+        ],
       },
       {
-        name: 'Professional',
-        price: 599,
-        features: ['Advanced Automation', 'Priority Support', '5000 Messages/Month', 'Advanced Analytics', 'Chatbot Integration']
+        name: "Professional",
+        price: 10000,
+        features: [
+          "Advanced Automation Workflows",
+          "Chatbot Integration",
+          "Customer Segmentation",
+          "Up to 10,000 Messages / Month",
+          "Advanced Analytics & Reports",
+          "Priority Support",
+        ],
       },
       {
-        name: 'Enterprise',
-        price: 798,
-        features: ['Full Automation', '24/7 Support', 'Unlimited Messages', 'Full Analytics', 'Custom Workflows', 'API Access']
-      }
-    ]
+        name: "Enterprise",
+        price: 18000,
+        features: [
+          "Custom Automation & Chatbot Flows",
+          "Unlimited Broadcast Logic",
+          "CRM / ERP Integration",
+          "Unlimited Messaging Logic*",
+          "Dedicated Account Manager",
+          "24/7 Priority Support",
+        ],
+      },
+    ],
   },
   {
-    icon: "fas fa-search",
-    title: "SEO Service",
-    description:
-      "Comprehensive SEO services to boost your website ranking, increase organic traffic, and improve online visibility.",
-    technologies: [
-      "On-page SEO",
-      "Off-page SEO",
-      "Keyword Research",
-      "Analytics",
-      "Content Optimization",
-    ],
-    price: 499,
-    plans: [
-      {
-        name: 'Basic',
-        price: 499,
-        features: ['On-page SEO', 'Keyword Research', 'Monthly Reports', 'Basic Analytics']
-      },
-      {
-        name: 'Professional',
-        price: 749,
-        features: ['All Basic Features', 'Off-page SEO', 'Backlink Building', 'Advanced Analytics', 'Content Strategy']
-      },
-      {
-        name: 'Enterprise',
-        price: 998,
-        features: ['All Professional Features', 'Technical SEO', 'Competitor Analysis', 'Full Analytics', 'Dedicated Manager', 'Custom Strategy']
-      }
-    ]
-  },
+  icon: "fas fa-search",
+  title: "SEO Services",
+  description:
+    "Data-driven SEO strategies to improve search rankings, increase organic traffic, and drive long-term growth.",
+  technologies: [
+    "On-Page SEO",
+    "Technical SEO",
+    "Content Optimization",
+    "Link Building",
+    "Analytics & Reporting",
+  ],
+  price: 5000,
+  deliveryType: "Monthly SEO Optimization & Strategy",
+  estimatedTimeline: "Ongoing service (visible results in 3–6 months)",
+  plans: [
+    {
+      name: "Basic",
+      price: 5000,
+      features: [
+        "Keyword Research (Up to 10 Keywords)",
+        "On-Page SEO Optimization",
+        "Meta Tags & Content Optimization",
+        "Basic Technical Fixes",
+        "Monthly SEO Report",
+      ],
+    },
+    {
+      name: "Professional",
+      price: 10000,
+      features: [
+        "All Basic Features",
+        "Keyword Research (Up to 25 Keywords)",
+        "Content Strategy & Optimization",
+        "Quality Backlink Building",
+        "Advanced SEO Analytics",
+        "Competitor Analysis",
+      ],
+    },
+    {
+      name: "Enterprise",
+      price: 20000,
+      features: [
+        "All Professional Features",
+        "Full Technical SEO Audit",
+        "High-Authority Backlinks",
+        "Conversion Rate Optimization (CRO)",
+        "Custom SEO Strategy",
+        "Dedicated SEO Manager",
+      ],
+    },
+  ],
+},
 ];

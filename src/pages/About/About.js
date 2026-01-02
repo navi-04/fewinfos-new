@@ -1,7 +1,11 @@
 import React from 'react';
+// import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './About.css';
 
+
 const About = () => {
+  const navigate = useNavigate();
   return (
     <div className="about-page">
       <section className="about-hero">
@@ -16,15 +20,10 @@ const About = () => {
           <div className="story-content">
             <h2>Our Story</h2>
             <p>
-              Founded with a vision to revolutionize the technology landscape, FewInfos has grown 
-              from a small startup to a trusted partner for businesses worldwide. Our journey is 
-              marked by continuous innovation, unwavering commitment to quality, and a deep 
-              understanding of our clients' needs.
+              Founded with a vision to revolutionize the technology landscape, FewInfos has grown from a small startup into a trusted partner for businesses worldwide. Our journey is defined by continuous innovation, an unwavering commitment to quality, and a deep understanding of our clients’ evolving needs.
             </p>
             <p>
-              We believe in the power of technology to transform businesses and create lasting 
-              impact. Every project we undertake is driven by this belief, ensuring that our 
-              solutions not only meet but exceed expectations.
+              We believe in the power of technology to transform businesses and create lasting impact. Every service we deliver, product we build, and open-source contribution we make is guided by this belief ensuring our solutions not only meet expectations but consistently exceed them.
             </p>
           </div>
           <div className="story-image">
@@ -92,23 +91,31 @@ const About = () => {
               <div className="timeline-content">
                 <div className="timeline-year">2023</div>
                 <h4>The Beginning</h4>
-                <p>FewInfos was founded with a vision to revolutionize technology solutions for businesses</p>
+                <p>Not even know what is start up and how to make one but decided to build one</p>
               </div>
             </div>
             <div className="timeline-item">
               <div className="timeline-dot"></div>
               <div className="timeline-content">
                 <div className="timeline-year">2024</div>
-                <h4>Rapid Growth</h4>
-                <p>Expanded our team and served over 200 clients, launching innovative products and services</p>
+                <h4>Failed attempts</h4>
+                <p>Tried hard to build a team to build something and failed over 100 times and 500+ meets wasted</p>
               </div>
             </div>
             <div className="timeline-item">
               <div className="timeline-dot"></div>
               <div className="timeline-content">
                 <div className="timeline-year">2025</div>
-                <h4>Industry Recognition</h4>
-                <p>Achieved 500+ successful projects and became a trusted partner for businesses worldwide</p>
+                <h4>First initiative</h4>
+                <p>successfully launched the website and got our first client</p>
+              </div>
+            </div>
+            <div className="timeline-item">
+              <div className="timeline-dot"></div>
+              <div className="timeline-content">
+                <div className="timeline-year">2026</div>
+                <h4>Scaling up</h4>
+                <p>Now we are building more open source projects and products</p>
               </div>
             </div>
           </div>
@@ -119,7 +126,7 @@ const About = () => {
         <div className="cta-container">
           <h2>Ready to Work Together?</h2>
           <p>Let's discuss how we can help transform your business</p>
-          <button className="cta-button">Get in Touch</button>
+          <button onClick={() => navigate('/services')} className="cta-button">Get Started</button>
         </div>
       </section>
     </div>

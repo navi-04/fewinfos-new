@@ -26,7 +26,7 @@ const CourseBuy = () => {
       <div className="course-buy-page">
         <div className="error-container">
           <h2>Course not found</h2>
-          <button onClick={() => navigate('/products')}>Back to Courses</button>
+          <button onClick={() => navigate('/products', { state: { activeTab: 'courses' } })}>Back to Courses</button>
         </div>
       </div>
     );
@@ -120,7 +120,7 @@ const CourseBuy = () => {
   return (
     <div className="course-buy-page">
       <div className="course-buy-container">
-        <button className="back-button" onClick={() => navigate('/products')}>
+        <button className="back-button" onClick={() => navigate('/products', { state: { activeTab: 'courses' } })}>
           <i className="fas fa-arrow-left"></i> Back to Courses
         </button>
 

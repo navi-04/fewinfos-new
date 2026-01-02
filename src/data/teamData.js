@@ -3,7 +3,7 @@ export const teamData = {
     {
       name: "Naveenraj Thiyagarajan",
       position: "Founder & CEO",
-      image: "images/naveenraj.jpg",
+      image: require("../assets/team/naveenraj.jpg"),
       socials: {
         github: "https://github.com/navi-04",
         linkedin: "http://www.linkedin.com/in/navithiyagu",
@@ -13,7 +13,7 @@ export const teamData = {
     {
       name: "Suvitha",
       position: "Graphic Designer",
-      image: "images/suvitha.jpg",
+      image: require("../assets/team/suvitha.jpg"),
       socials: {
         github: "https://github.com/SuvithaaaaR",
         linkedin: "https://www.linkedin.com/in/suvitha-ramesh/",
@@ -23,7 +23,7 @@ export const teamData = {
     {
       name: "Nureshma",
       position: "SDE",
-      image: "images/nureshma.jpg",
+      image: require("../assets/team/nureshma.jpg"),
       socials: {
         github: "https://github.com/Reshma-2006",
         linkedin: "http://www.linkedin.com/in/nureshma-s-full-stack-developer-a03444290/",
@@ -33,7 +33,7 @@ export const teamData = {
     {
       name: "Nirmala",
       position: "SDE",
-      image: "images/nirmala.jpg",
+      image: require("../assets/team/nirmala.jpg"),
       socials: {
         github: "https://github.com/nirmalaramadass",
         linkedin: "https://www.linkedin.com/in/nirmala-ramadas-16b081290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -43,7 +43,7 @@ export const teamData = {
     {
       name: "Shivani",
       position: "Event Manager",
-      image: "images/shivani.jpg",
+      image: require("../assets/team/shivani.jpg"),
       socials: {
         github: "https://github.com/Shivani-rajalakshmi",
         linkedin: "https://www.linkedin.com/in/shivani-karthikeyan-400508283?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -53,7 +53,7 @@ export const teamData = {
     {
       name: "Swathi",
       position: "SDE",
-      image: "images/swathi.jpg",
+      image: require("../assets/team/swathi.jpg"),
       socials: {
         github: "https://github.com/SWATHI-63",
         linkedin: "https://www.linkedin.com/in/swathi-sundharaj-2a7242312",
@@ -61,23 +61,23 @@ export const teamData = {
       },
     },
     {
-      name: "Ragavi",
-      position: "HR",
-      image: "images/ragavi.jpg",
+      name: "Sridevi",
+      position: "Intern",
+      image: require("../assets/team/sridevi.jpeg"),
       socials: {
-        github: "https://github.com/ragavi1105",
-        linkedin: "https://www.linkedin.com/in/ragavi-s-96848925a/",
-        instagram: "#",
+        github: " https://github.com/srisridevi1206",
+        linkedin: "https://www.linkedin.com/in/sridevi-srinivasan-7860b7275?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        instagram: "https://www.instagram.com/iam._.sri1?igsh=MXV0cHVhNjM4d3Zxcg==",
       },
     },
     {
-      name: "Ragavi",
+      name: "Priyadharshini",
       position: "Intern",
-      image: "images/ragavi.jpg",
+      image: require("../assets/team/priyadharshini.jpeg"),
       socials: {
-        github: "https://github.com/ragavi1105",
-        linkedin: "https://www.linkedin.com/in/ragavi-s-96848925a/",
-        instagram: "#",
+        github: "https://github.com/priyadharshini26806",
+        linkedin: "https://www.linkedin.com/in/priyadharshini26806/",
+        instagram: "https://www.instagram.com/priya__dharshzz?igsh=MTF1dHJlM2hyaDN1ZA==",
       },
     },
   ],

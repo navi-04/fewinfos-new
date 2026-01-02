@@ -43,7 +43,7 @@ const OurWork = () => {
         </svg>
       ),
       link: '/events'
-    }
+    } 
   ];
 
   return (

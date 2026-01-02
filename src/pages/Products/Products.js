@@ -1,30 +1,27 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { productsData } from '../../data/productsData';
 import { coursesData } from '../../data/coursesData';
 import './Products.css';
 
 const Products = () => {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState('products');
-  const [showInstructionDialog, setShowInstructionDialog] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState(null);
+  const location = useLocation();
+  const [activeTab, setActiveTab] = useState(location.state?.activeTab || 'products');
 
-  const handleUseProduct = (product) => {
-    setSelectedProduct(product);
-    setShowInstructionDialog(true);
-  };
-
-  const closeInstructionDialog = () => {
-    setShowInstructionDialog(false);
-    setSelectedProduct(null);
+  const handleUseProduct = (index) => {
+    navigate(`/try-product/${index}`);
   };
 
   const handleShareProduct = async (product, index) => {
+    const productUrl = product.isFree 
+      ? `${window.location.origin}/fewinfos-new#/try-product/${index}`
+      : `${window.location.origin}/fewinfos-new#/product-buy/${index}`;
+    
     const shareData = {
       title: product.title,
-      text: `Check out ${product.title} - ${product.description}. ${product.isFree ? 'FREE' : `₹${product.price}`}`,
-      url: `${window.location.origin}/product-buy/${index}`
+      text: `Check out ${product.title} - ${product.description}. ${product.isFree ? 'FREE to use!' : `₹${product.price}`}`,
+      url: productUrl
     };
 
     try {
@@ -45,7 +42,7 @@ const Products = () => {
     const shareData = {
       title: course.title,
       text: `Check out ${course.title} - ${course.description}. Only ₹${course.price}! ${course.discount > 0 ? `${course.discount}% OFF` : ''}`,
-      url: `${window.location.origin}/course-buy/${index}`
+      url: `${window.location.origin}/fewinfos-new#/course-buy/${index}`
     };
 
     try {
@@ -148,7 +145,7 @@ const Products = () => {
                             )}
                             <button 
                               className="product-btn free-btn"
-                              onClick={() => handleUseProduct(product)}
+                              onClick={() => handleUseProduct(index)}
                             >
                               <i className="fas fa-hand-pointer"></i>
                               Use it
@@ -274,47 +271,6 @@ const Products = () => {
         )}
       </div>
 
-      {/* Instruction Dialog */}
-      {showInstructionDialog && selectedProduct && (
-        <div className="dialog-overlay" onClick={closeInstructionDialog}>
-          <div className="instruction-dialog-box" onClick={(e) => e.stopPropagation()}>
-            <div className="instruction-dialog-header">
-              <h2>
-                <i className="fas fa-book-open"></i>
-                How to Use: {selectedProduct.title}
-              </h2>
-              <button className="close-btn" onClick={closeInstructionDialog}>
-                <i className="fas fa-times"></i>
-              </button>
-            </div>
-            <div className="instruction-dialog-body">
-              {selectedProduct.instructions && selectedProduct.instructions.length > 0 ? (
-                <div className="instructions-list">
-                  {selectedProduct.instructions.map((instruction, index) => (
-                    <div key={index} className="instruction-step">
-                      <div className="step-number">{index + 1}</div>
-                      <div className="step-content">
-                        <h4>{instruction.title}</h4>
-                        <p>{instruction.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <div className="no-instructions">
-                  <i className="fas fa-info-circle"></i>
-                  <p>No instructions available for this product yet.</p>
-                </div>
-              )}
-            </div>
-            <div className="instruction-dialog-footer">
-              <button className="dialog-btn-close" onClick={closeInstructionDialog}>
-                Got it!
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

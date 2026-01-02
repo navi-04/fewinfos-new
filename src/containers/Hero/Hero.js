@@ -34,13 +34,12 @@ const Hero = () => {
           <span className="highlight"> FewInfos</span>
         </h1>
         <p className="hero-text">
-          Delivering cutting-edge solutions that drive innovation, 
-          growth, and success for businesses worldwide
+          Building services, products, and open-source technologies that power innovation, growth, and global success.
         </p>
         
         <div className="hero-stats">
           <div className="stat-item">
-            <h3>500+</h3>
+            <h3>25+</h3>
             <p>Projects</p>
           </div>
           <div className="stat-item">

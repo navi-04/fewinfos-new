@@ -7,10 +7,16 @@ const Services = () => {
   const navigate = useNavigate();
 
   const formatPrice = (price) => {
-    return new Intl.NumberFormat('en-US', {
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(price);
+    if (price >= 1000) {
+      const kValue = price / 1000;
+      // If it's a whole number in k format, don't show decimals
+      if (kValue % 1 === 0) {
+        return `${kValue}k`;
+      }
+      // Otherwise show one decimal place
+      return `${kValue.toFixed(1)}k`;
+    }
+    return price.toString();
   };
 
   const scrollToService = (index) => {
@@ -24,7 +30,7 @@ const Services = () => {
     const shareData = {
       title: service.title,
       text: `Check out ${service.title} - ${service.description}. Starting from ₹${formatPrice(service.price)}`,
-      url: `${window.location.origin}/service-buy/${index}`
+      url: `${window.location.origin}/fewinfos-new#/service-buy/${index}`
     };
 
     try {
@@ -85,7 +91,7 @@ const Services = () => {
                 <div className="service-price">
                   <span className="price-label">Starting from</span>
                   <span className="price-amount">
-                    ${formatPrice(service.price)}
+                    ₹{formatPrice(service.price)}
                   </span>
                 </div>
 

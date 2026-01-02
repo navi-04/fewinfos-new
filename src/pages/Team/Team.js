@@ -11,7 +11,7 @@ const Team = () => {
     { label: 'SDE', value: 'SDE' },
     { label: 'Graphic Designer', value: 'Graphic Designer' },
     { label: 'Event Manager', value: 'Event Manager' },
-    { label: 'HR', value: 'HR' },
+    // { label: 'HR', value: 'HR' },
     { label: 'Intern', value: 'Intern' },
   ];
 

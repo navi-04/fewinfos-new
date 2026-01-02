@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 115vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,7 +12,7 @@
 
 .hero-background {
   position: absolute;
-  top: 60px;
+  top: 25px;
   left: 0;
   width: 100%;
   height: calc(100% - 60px);
@@ -88,7 +88,7 @@
 .stat-item h3 {
   font-size: 42px;
   font-weight: 700;
-  color: #003366;
+  color: #eaeef0;
   margin-bottom: 8px;
 }
 
@@ -166,14 +166,26 @@
 }
 
 @media (max-width: 768px) {
-    .hero-background {
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  overflow: hidden;
+  padding: 120px 20px 60px;
+  padding-top: max(120px, calc(60px + 5vh));
+}
+
+.hero-background {
   position: absolute;
   top: 60px;
   left: 0;
   width: 100%;
   height: calc(100% - 60px);
   z-index: 0;
-  background-image: url('../../assets/hero2.png');
+  background-image: url('../../assets/hero.png');
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -240,6 +252,18 @@
   cursor: pointer;
 }
 
+.hero {
+  position: relative;
+  min-height: 105vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  overflow: hidden;
+  padding: 120px 20px 60px;
+  padding-top: max(120px, calc(60px + 5vh));
+}
+
 .scroll-arrow {
   width: 30px;
   height: 30px;
@@ -250,7 +274,7 @@
 }
 .hero-background {
   position: absolute;
-  top: 60px;
+  top: 30px;
   left: 0;
   width: 100%;
   height: calc(100% - 60px);

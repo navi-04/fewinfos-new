@@ -14,6 +14,20 @@ const ServiceBuy = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  // Format price to k format
+  const formatPrice = (price) => {
+    if (price >= 1000) {
+      const kValue = price / 1000;
+      // If it's a whole number in k format, don't show decimals
+      if (kValue % 1 === 0) {
+        return `${kValue}k`;
+      }
+      // Otherwise show one decimal place
+      return `${kValue.toFixed(1)}k`;
+    }
+    return price.toString();
+  };
+
   // Form state
   const [selectedPlan, setSelectedPlan] = useState('Basic');
   const [customPrice, setCustomPrice] = useState('');
@@ -100,7 +114,7 @@ const ServiceBuy = () => {
       company_website: formData.companyWebsite || 'N/A',
       service_name: service.title,
       plan_name: selectedPlan,
-      plan_price: `₹${getCurrentPrice().toLocaleString()}`,
+      plan_price: `₹${formatPrice(getCurrentPrice())}`,
       business_type: formData.businessType,
       industry: formData.industry,
       target_market: formData.targetMarket,
@@ -110,7 +124,7 @@ Service Request Details:
 ------------------------
 Service: ${service.title}
 Selected Plan: ${selectedPlan}
-Price: ₹${getCurrentPrice().toLocaleString()}
+Price: ₹${formatPrice(getCurrentPrice())}
 
 Customer Information:
 --------------------
@@ -150,7 +164,7 @@ Description: ${formData.businessDescription || 'N/A'}
 
       console.log('Email sent successfully:', result);
       
-      const successMessage = `Your contact request has been sent successfully!\n\nService: ${service.title}\nPlan: ${selectedPlan}\nPrice: ₹${getCurrentPrice().toLocaleString()}\n\nWe will get back to you soon via email or phone.`;
+      const successMessage = `Your contact request has been sent successfully!\n\nService: ${service.title}\nPlan: ${selectedPlan}\nPrice: ₹${formatPrice(getCurrentPrice())}\n\nWe will get back to you soon via email or phone.`;
       showDialogMessage('success', 'Request Sent Successfully!', successMessage);
       
       // Reset form after successful submission
@@ -206,7 +220,7 @@ Description: ${formData.businessDescription || 'N/A'}
             </div>
             <div className="summary-item">
               <span className="summary-label">Starting Price:</span>
-              <span className="summary-value">₹{service.price.toLocaleString()}</span>
+              <span className="summary-value">₹{formatPrice(service.price)}</span>
             </div>
             <div className="summary-item">
               <span className="summary-label">Tech Stack:</span>
@@ -214,11 +228,11 @@ Description: ${formData.businessDescription || 'N/A'}
             </div>
             <div className="summary-item">
               <span className="summary-label">Delivery Type:</span>
-              <span className="summary-value">Custom Web Solution</span>
+              <span className="summary-value">{service.deliveryType}</span>
             </div>
             <div className="summary-item">
               <span className="summary-label">Estimated Timeline:</span>
-              <span className="summary-value">3–6 weeks (finalized after requirements)</span>
+              <span className="summary-value">{service.estimatedTimeline}</span>
             </div>
           </div>
         </section>
@@ -238,8 +252,8 @@ Description: ${formData.businessDescription || 'N/A'}
                 <div className="plan-header">
                   <h3>{plan.name}</h3>
                   <div className="plan-price">
-                    <span className="currency">$</span>
-                    <span className="amount">{Math.round(plan.price).toLocaleString()}</span>
+                    <span className="currency">₹</span>
+                    <span className="amount">{formatPrice(plan.price)}</span>
                   </div>
                 </div>
                 <ul className="plan-features">
@@ -504,7 +518,7 @@ Description: ${formData.businessDescription || 'N/A'}
                   <i className="fas fa-paper-plane"></i> Send Contact Request
                   {selectedPlan && (
                     <span className="btn-price-tag">
-                      ₹{getCurrentPrice().toLocaleString()}
+                      ₹{formatPrice(getCurrentPrice())}
                     </span>
                   )}
                 </>

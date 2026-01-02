@@ -1,9 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 import './Navbar.css';
 import logo from '../../assets/logo.png';
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const navRef = useRef(null);
 
@@ -44,15 +47,15 @@ const Navbar = () => {
           <li><Link to="/events" onClick={closeMenu}>Events</Link></li>
           <li><Link to="/team" onClick={closeMenu}>Team</Link></li>
           {/* <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li> */}
-          <li className="mobile-login">
+          {/* <li className="mobile-login">
             <button className="btn-login">Login</button>
-          </li>
+          </li> */}
         </ul>
 
         <div className="navbar-actions">
-          <button className="btn-login desktop-login">Login</button>
+          <button onClick={() => navigate('/services')} className="btn-login desktop-login">Get Started</button>
           
-          <div className="mobile-actions">
+          {/* <div className="mobile-actions">
             <button className="icon-button cart-button" aria-label="Cart">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="9" cy="21" r="1"></circle>
@@ -67,7 +70,7 @@ const Navbar = () => {
                 <circle cx="12" cy="7" r="4"></circle>
               </svg>
             </button>
-          </div>
+          </div> */}
 
           <div 
             className={`hamburger ${isOpen ? 'active' : ''}`}

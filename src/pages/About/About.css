@@ -265,6 +265,11 @@
   transition: transform 0.3s;
 }
 
+.cta-button a {
+  text-decoration: none;
+  color: #003366;
+}
+
 .cta-button:hover {
   transform: translateY(-3px);
 }
