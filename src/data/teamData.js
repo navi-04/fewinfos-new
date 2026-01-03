@@ -13,7 +13,7 @@ export const teamData = {
     {
       name: "Suvitha",
       position: "Graphic Designer",
-      image: require("../assets/team/suvitha.jpg"),
+      image: require("../assets/team/suvitha.jpeg"),
       socials: {
         github: "https://github.com/SuvithaaaaR",
         linkedin: "https://www.linkedin.com/in/suvitha-ramesh/",
@@ -43,7 +43,7 @@ export const teamData = {
     {
       name: "Shivani",
       position: "Event Manager",
-      image: require("../assets/team/shivani.jpg"),
+      image: require("../assets/team/shivani.jpeg"),
       socials: {
         github: "https://github.com/Shivani-rajalakshmi",
         linkedin: "https://www.linkedin.com/in/shivani-karthikeyan-400508283?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
