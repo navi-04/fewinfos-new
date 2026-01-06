@@ -12,7 +12,9 @@ const Team = () => {
     { label: 'Graphic Designer', value: 'Graphic Designer' },
     { label: 'Event Manager', value: 'Event Manager' },
     // { label: 'HR', value: 'HR' },
-    { label: 'Intern', value: 'Intern' },
+    { label: 'SDE Intern', value: 'SDE Intern' },
+    { label: 'Sales Intern', value: 'Sales Intern' },
+    { label: 'Video Editor', value: 'Video Editor' },
   ];
 
   const filteredMembers = activeFilter === 'All' 

@@ -149,23 +149,23 @@ export const productsData = [
     manualLink: "https://pypi.org/project/layerlens/",
     contributeLink: "https://github.com/navi-04/layerlens",
     instructionsHtml: `
-     <div style="font-family: Arial, sans-serif; color: #003366; max-width: 700px; margin: 0 auto;">
+     <div style="font-family: Arial, sans-serif; color: #003366; max-width: 100%; padding: 0 16px; margin: 0 auto; box-sizing: border-box;">
 
-  <h3 style="color:#002244;">How to Use LayerLens</h3>
+  <h3 style="color:#002244; font-size: 1.2em;">How to Use LayerLens</h3>
 
   <ol style="padding-left: 20px;">
 
     <!-- Step 1 -->
     <li style="margin-bottom: 16px;">
       <strong>Install the Package</strong>
-      <p>Install LayerLens using pip:</p>
+      <p style="margin: 8px 0;">Install LayerLens using pip:</p>
 
-      <div style="display:flex; gap:8px; align-items:center;">
-        <code style="flex:1; background:#f0f4f8; padding:8px; border-radius:6px;">
+      <div style="display:flex; flex-direction:column; gap:8px; width:100%;">
+        <code style="display:block; background:#f0f4f8; padding:12px; border-radius:6px; overflow-x:auto; word-wrap:break-word; font-size:0.9em;">
           pip install layerlens
         </code>
         <button onclick="copyCode(this)"
-          style="background:#003366;color:#fff;border:none;padding:8px 12px;border-radius:6px;">
+          style="background:#003366;color:#fff;border:none;padding:10px 16px;border-radius:6px;cursor:pointer;font-size:0.9em;width:100%;max-width:120px;">
           Copy
         </button>
       </div>
@@ -174,14 +174,14 @@ export const productsData = [
     <!-- Step 2 -->
     <li style="margin-bottom: 16px;">
       <strong>Import the Library</strong>
-      <p>Import LayerLens in your Python file:</p>
+      <p style="margin: 8px 0;">Import LayerLens in your Python file:</p>
 
-      <div style="display:flex; gap:8px; align-items:center;">
-        <code style="flex:1; background:#f0f4f8; padding:8px; border-radius:6px;">
+      <div style="display:flex; flex-direction:column; gap:8px; width:100%;">
+        <code style="display:block; background:#f0f4f8; padding:12px; border-radius:6px; overflow-x:auto; word-wrap:break-word; font-size:0.9em;">
           from layerlens import Explainer
         </code>
         <button onclick="copyCode(this)"
-          style="background:#003366;color:#fff;border:none;padding:8px 12px;border-radius:6px;">
+          style="background:#003366;color:#fff;border:none;padding:10px 16px;border-radius:6px;cursor:pointer;font-size:0.9em;width:100%;max-width:120px;">
           Copy
         </button>
       </div>
@@ -190,14 +190,14 @@ export const productsData = [
     <!-- Step 3 -->
     <li style="margin-bottom: 16px;">
       <strong>Create an Explainer</strong>
-      <p>Pass your trained model to the explainer:</p>
+      <p style="margin: 8px 0;">Pass your trained model to the explainer:</p>
 
-      <div style="display:flex; gap:8px; align-items:center;">
-        <code style="flex:1; background:#f0f4f8; padding:8px; border-radius:6px;">
+      <div style="display:flex; flex-direction:column; gap:8px; width:100%;">
+        <code style="display:block; background:#f0f4f8; padding:12px; border-radius:6px; overflow-x:auto; word-wrap:break-word; font-size:0.9em;">
           explainer = Explainer(model)
         </code>
         <button onclick="copyCode(this)"
-          style="background:#003366;color:#fff;border:none;padding:8px 12px;border-radius:6px;">
+          style="background:#003366;color:#fff;border:none;padding:10px 16px;border-radius:6px;cursor:pointer;font-size:0.9em;width:100%;max-width:120px;">
           Copy
         </button>
       </div>
@@ -206,14 +206,14 @@ export const productsData = [
     <!-- Step 4 -->
     <li style="margin-bottom: 16px;">
       <strong>Explain Model Predictions</strong>
-      <p>Generate layer-wise explanations:</p>
+      <p style="margin: 8px 0;">Generate layer-wise explanations:</p>
 
-      <div style="display:flex; gap:8px; align-items:center;">
-        <code style="flex:1; background:#f0f4f8; padding:8px; border-radius:6px;">
+      <div style="display:flex; flex-direction:column; gap:8px; width:100%;">
+        <code style="display:block; background:#f0f4f8; padding:12px; border-radius:6px; overflow-x:auto; word-wrap:break-word; font-size:0.9em;">
           explanation = explainer.explain(input_data)
         </code>
         <button onclick="copyCode(this)"
-          style="background:#003366;color:#fff;border:none;padding:8px 12px;border-radius:6px;">
+          style="background:#003366;color:#fff;border:none;padding:10px 16px;border-radius:6px;cursor:pointer;font-size:0.9em;width:100%;max-width:120px;">
           Copy
         </button>
       </div>
@@ -222,14 +222,14 @@ export const productsData = [
     <!-- Step 5 -->
     <li style="margin-bottom: 16px;">
       <strong>Visualize the Results</strong>
-      <p>Export visual explanations:</p>
+      <p style="margin: 8px 0;">Export visual explanations:</p>
 
-      <div style="display:flex; gap:8px; align-items:center;">
-        <code style="flex:1; background:#f0f4f8; padding:8px; border-radius:6px;">
+      <div style="display:flex; flex-direction:column; gap:8px; width:100%;">
+        <code style="display:block; background:#f0f4f8; padding:12px; border-radius:6px; overflow-x:auto; word-wrap:break-word; font-size:0.9em;">
           explainer.visualize(explanation, output_dir="explanations")
         </code>
         <button onclick="copyCode(this)"
-          style="background:#003366;color:#fff;border:none;padding:8px 12px;border-radius:6px;">
+          style="background:#003366;color:#fff;border:none;padding:10px 16px;border-radius:6px;cursor:pointer;font-size:0.9em;width:100%;max-width:120px;">
           Copy
         </button>
       </div>
